@@ -13,9 +13,12 @@ public class Main {
 //        System.out.println(firstLastDigitSum(156789));
 //        System.out.println(firstLastDigitSum(2200));
 //        System.out.println(firstLastDigitSum(9));
-        System.out.println(getEvenDigitSum(123456789));
-        System.out.println(getEvenDigitSum(252));
-        System.out.println(getEvenDigitSum(1000));
+//        System.out.println(getEvenDigitSum(123456789));
+//        System.out.println(getEvenDigitSum(252));
+//        System.out.println(getEvenDigitSum(1000));
+        System.out.println(hasSharedDigit(12, 23));
+        System.out.println(hasSharedDigit(9, 99));
+        System.out.println(hasSharedDigit(15, 55));
 
 
     }
@@ -70,5 +73,19 @@ public class Main {
             return sumOfEvenNumbers;
         }
         return -1;
+    }
+
+    public static boolean hasSharedDigit(int numberOne, int numberTwo){
+        if((numberOne>=10&&numberOne<=99)&&(numberTwo>=10&&numberTwo<=99)){
+            int digitOne = numberOne/10;
+            int digitTwo = numberOne%10;
+            int digitThree = numberTwo/10;
+            int digitFour = numberTwo%10;
+            if (((digitOne == digitThree)||(digitOne == digitFour))||((digitTwo == digitThree)||(digitTwo == digitFour))){
+                return true;
+            }
+            return false;
+        }
+        return false;
     }
 }
