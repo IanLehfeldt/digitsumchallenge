@@ -9,10 +9,14 @@ public class Main {
 //        System.out.println(isPalindrome(707));
 //        System.out.println(isPalindrome(-120021));
 //        System.out.println(isPalindrome(12340));
-        System.out.println(firstLastDigitSum(2008));
-        System.out.println(firstLastDigitSum(156789));
-        System.out.println(firstLastDigitSum(2200));
-        System.out.println(firstLastDigitSum(9));
+//        System.out.println(firstLastDigitSum(2008));
+//        System.out.println(firstLastDigitSum(156789));
+//        System.out.println(firstLastDigitSum(2200));
+//        System.out.println(firstLastDigitSum(9));
+        System.out.println(getEvenDigitSum(123456789));
+        System.out.println(getEvenDigitSum(252));
+        System.out.println(getEvenDigitSum(1000));
+
 
     }
 
@@ -50,6 +54,20 @@ public class Main {
                 firstNumber = number;
             }
             return firstNumber + lastNumber;
+        }
+        return -1;
+    }
+
+    public static int getEvenDigitSum(int number) {
+        if(number >= 0) {
+            int sumOfEvenNumbers = 0;
+            while(number >= 1) {
+                if(number%2==0) {
+                    sumOfEvenNumbers+=(number%10);
+                }
+                number/=10;
+            }
+            return sumOfEvenNumbers;
         }
         return -1;
     }
